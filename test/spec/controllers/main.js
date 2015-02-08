@@ -3,7 +3,7 @@
 describe( 'Controller: MainCtrl', function() {
 
     // load the controller's module
-    beforeEach(module( 'yoAngularExpressTestApp' ) );
+    beforeEach(module( 'sillypointAngularNodeApp' ) );
 
     var MainCtrl,
         scope;
@@ -16,11 +16,8 @@ describe( 'Controller: MainCtrl', function() {
         });
     }));
 
-    it( 'should attach a list of awesomeClientThings to the scope', function() {
-        expect( scope.awesomeClientThings.length ).toBe( 8 );
+    it( 'should attach a list of scores to the scope', function() {
+        expect( scope.scores.length ).toBeGreaterThan( 8 );
     } );
 
-    it( 'should attach a list of awesomeServerThings to the scope', function() {
-        expect( scope.awesomeServerThings.length ).toBe( 4 );
-    } );
 } );

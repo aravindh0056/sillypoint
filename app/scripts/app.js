@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module( 'yoAngularExpressTestApp', [ 'ui.bootstrap', 'btford.socket-io' ])
+angular.module( 'sillypointAngularNodeApp', [ 'ui.bootstrap'])
     .config( [ '$routeProvider', '$locationProvider', function ( $routeProvider, $locationProvider ) {
         $routeProvider
         .when( '/', {
             // @todo fix this
-            templateUrl: 'scripts/main/mainView.html',
+            templateUrl: 'views/mainView.html',
             controller: 'MainCtrl'
         })
         .otherwise({

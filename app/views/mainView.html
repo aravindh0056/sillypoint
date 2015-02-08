@@ -1,0 +1,29 @@
+<script type="text/ng-template" id="scorecard">
+
+<div class="scorecard">
+    <div style="width: 352px; height: 219px;" id="">
+        {{score.teamName1}} <br>
+        {{score.score1}} <br>
+        {{score.teamName2}} <br>
+        {{score.score2}} <br>
+
+    </div>
+</div>
+</script>
+
+<div class="hero-unit">
+    <h1>Live cricket scores</h1>
+    <div>
+        <div class="row well well-large">
+            <div ng-repeat="score in scores" ng-include="'scorecard'"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="span4 text-center">
+        <button class="btn" ng-click="redirect( '/scrape' )">
+            <i class="icon-external-link"</button></i> Scrape
+        </button>
+    </div>
+</div>
+

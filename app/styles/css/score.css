@@ -1,0 +1,8 @@
+.scorecard {
+	border : 1px solid darkgray;
+	padding: 50px;
+	margin-bottom: 10px;
+	margin-right: 50px;
+	float: left;
+	display: inline-block;
+}
