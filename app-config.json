@@ -1,11 +1,11 @@
 {
     "info" : {
-        "name"          :   "yo-angular-express-plus",
-        "description"   :   "Yeoman scaffolded angular-express app with extra goodies",
+        "name"          :   "sillypoint",
+        "description"   :   "website to view cricket live scores",
         "version"       :   "0.1.0",
         "author"        :   {
-            "name"    :   "author",
-            "email"   :   "email",
+            "name"    :   "Aravindh Balakrishnan",
+            "email"   :   "arvindh5686@gmail.com    ",
             "url"     :   "url",
             "twitter" :   "twitter"
         }
@@ -22,5 +22,5 @@
         "name"          : "test_db",
         "collection"    : "test_col"
     },
-	"installed" :   false
+	"installed" :	true
 }

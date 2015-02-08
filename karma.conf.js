@@ -14,7 +14,6 @@ files = [
   'app/components/angular-socket-io/*.js',
   'app/scripts/*.js',
   'app/scripts/**/*.js',
-  'test/mock/**/*.js',
   'test/spec/**/*.js'
 ];
 
