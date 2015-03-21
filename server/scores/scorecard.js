@@ -12,15 +12,15 @@ module.exports = LiveScore;
 
 function populateFullScoreCard(innings, index, $) {
 	var arr = [];
-	var test1 = $('#' + innings).find('table')[index];
-	var test2 = $(test1).find('tr');
+	var innings = $('#' + innings).find('table')[index];
+	var row = $(innings).find('tr');
 
-	for(var i=1;i<test2.length;i++) {
-		var test3 = $(test2[i]).find('td');
+	for(var i=1;i<row.length;i++) {
+		var col = $(row[i]).find('td');
 		var a = {};
-		for(var j=0;j<test3.length;j++) {
-			var test4 = $(test3[j]).text();
-			a['key' + j] = test4.replace(/\t/g,'').replace(/\r\n/g,'');;
+		for(var j=0;j<col.length;j++) {
+			var val = $(col[j]).text();
+			a['key' + j] = val.replace(/\t/g,'').replace(/\r\n/g,'');;
 		}
 		arr.push(a);
 	}
