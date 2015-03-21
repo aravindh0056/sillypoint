@@ -10,6 +10,24 @@ var Q = require('q');
 
 module.exports = LiveScore;
 
+function populateFullScoreCard(innings, index, $) {
+	var arr = [];
+	var test1 = $('#' + innings).find('table')[index];
+	var test2 = $(test1).find('tr');
+
+	for(var i=1;i<test2.length;i++) {
+		var test3 = $(test2[i]).find('td');
+		var a = {};
+		for(var j=0;j<test3.length;j++) {
+			var test4 = $(test3[j]).text();
+			a['key' + j] = test4.replace(/\t/g,'').replace(/\r\n/g,'');;
+		}
+		arr.push(a);
+	}
+
+	return arr;
+}
+
 function LiveScore(url){
 	console.log(url);
 	var deferred = Q.defer();
@@ -23,10 +41,22 @@ function LiveScore(url){
 			title = $(title).text();
 			var innings_1 = $('#innings_1').find('h4')[0];
 			var innings_2 = $('#innings_2').find('h4')[0];
+
+			var innings1Batting = populateFullScoreCard("innings_1", 0, $);
+			var innings1Bowling = populateFullScoreCard("innings_1", 1, $);
+
+			var innings2Batting = populateFullScoreCard("innings_2", 0, $);
+			var innings2Bowling = populateFullScoreCard("innings_2", 1, $);
+		
+			//var test = $('#innings_1').find('table').find('tr')[tbody-1];
 			deferred.resolve({
 				title : title,
 				innings1 : $(innings_1).text(),
-				innings2: $(innings_2).text()
+				innings1Batting : innings1Batting,
+				innings1Bowling : innings1Bowling,
+				innings2 : $(innings_2).text(),
+				innings2Batting : innings2Batting,
+				innings2Bowling : innings2Bowling
 			});
 			//score1 = score1.replace(/\t/g,'');
 

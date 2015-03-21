@@ -37,7 +37,7 @@ function getScoreDetails() {
 
 			json.teamName2 = $($(this).find('.team_name_completed')[1]).text();
 			json.score2= $($(this).find('.teams_scores')[1]).text();
-			scores.push(json);
+			//scores.push(json);
 	})
 
 	deferred.resolve(scores);
@@ -72,17 +72,15 @@ function getHyperLinks() {
 }
 
 function getMatches(cb) {
-
-
 	var finalStep = function(title, score, status, hyperLinks) {
 		//Get scores from hyperlink because the score we have now is not updated frequently in cricbuzz
 		var LiveScore = require('./scorecard')
-		//console.log(title);
-		//console.log(score);
+		console.log("Title:" + title);
+		console.log("Score" + score);
 		console.log("hyperlink:" + "  "+ hyperLinks[1]);
 		var promise = new LiveScore(hyperLinks[1]);
 		promise.then(function(status) {
-			//scores.push(status);
+			scores.push(status);
 			console.log(status);
 		}).
 		done(cb)
@@ -97,16 +95,6 @@ function getMatches(cb) {
     	console.log("Error: " + err);
 	})
 	.done();
-
-/*
-	getTitle.call(this)
-	.then(getScoreDetails)
-	.then(getMatchStatus)
-	.then(getHyperLinks)
-	.fail(function(err){
-    	console.log("Error: " + err);
-	})
-	.done();*/
 }
 
 exports.getAllScores = function(req, res){
