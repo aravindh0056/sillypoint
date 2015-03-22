@@ -13,7 +13,11 @@ angular.module( 'sillypointAngularNodeApp', [ 'ui.bootstrap'])
             templateUrl: 'views/about.html',
             controller: 'AboutCtrl'
         })
-        
+        .when( '/contact', {
+            // @todo fix this
+            templateUrl: 'views/contact.html',
+            controller: 'AboutCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });
