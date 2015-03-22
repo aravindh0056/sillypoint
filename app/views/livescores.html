@@ -1,28 +1,31 @@
 <script type="text/ng-template" id="scorecard">
 
-<div class="scorecard">
-    <div style="width: 352px; height: 219px;" id="">
+<div>
+<a href="#">
+    <div style="width: 352px; height: 100px;" id="">
         {{score.title}} <br>
         {{score.innings1}} <br>
         {{score.innings2}} <br>
     </div>
+</a>
 </div>
 </script>
 
-<div class="hero-unit">
+<div>
     <h1>Live cricket scores</h1>
-    <div>
-        <div class="row well well-large">
-            <div ng-repeat="score in scores" ng-include="'scorecard'"></div>
+</div>
+
+
+<div id="demo1" class="col-3 col-md-3" style="background-color: #465464; padding:20px; height:2500px">
+    <div class="row" style="margin-top:20px;">
+        <div class="pull-left">
+            <input id="my4" type="text" ng-model="folderSearch" size="40" class="col-sm-3 form-control input-sm" placeholder="Search">
         </div>
-    </div>
-</div>
-<div class="row">
-    <div class="span4 text-center">
-        <button class="btn" ng-click="redirect( '/scrape' )">
-            <i class="icon-external-link"</button></i> Scrape
-        </button>
-    </div>
-</div>
 
+    </div>
 
+    <div style="margin-top:20px;">
+      <div ng-repeat="score in scores" ng-include="'scorecard'"></div>
+    </div>
+
+</div>
