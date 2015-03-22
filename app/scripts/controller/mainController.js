@@ -7,7 +7,6 @@ angular.module( 'sillypointAngularNodeApp' )
         $http.get('http://localhost:3001/scrape').
         success(function(data) {
             $scope.scores = data;
-            $scope.innings1Batting = data[0].innings1Batting;
         });
 
         $scope.redirect = function( path ) {
@@ -16,6 +15,17 @@ angular.module( 'sillypointAngularNodeApp' )
             $window.location.href = path;
         };
 
+        $scope.refreshScorecard = function( score ) {
+            $scope.innings1 = {
+                batting : score.innings1Batting,
+                bowling : score.innings1Bowling
+            }
+
+            $scope.innings2 = {
+                batting : score.innings2Batting,
+                bowling : score.innings2Bowling
+            }
+        }
     }])
     .controller( 'AboutCtrl', [ '$scope', '$location', '$window', '$http', 
                     function( $scope, $location, $window, $http ) {

@@ -1,38 +1,17 @@
-<script type="text/ng-template" id="scorecard">
-
-<div>
-<a ng-click="" class="scoreitem" href="#">
-    <div style="width: 352px; height: 100px;" id="">
-        {{score.title}} <br>
-        {{score.innings1}} <br>
-        {{score.innings2}} <br>
-    </div>
-</a>
-</div>
+<script id="summary" type="text/ng-template">
+  <div>
+  <a ng-click="refreshScorecard(score)" class="scoreitem" href="#">
+      <div style="width: 352px; height: 100px;" id="">
+          {{score.title}} <br>
+          {{score.innings1}} <br>
+          {{score.innings2}} <br>
+      </div>
+  </a>
+  </div>
 </script>
 
-<div>
-    <h1>Live cricket scores</h1>
-</div>
-
-<div id="sidebar" class="col-3 col-md-3" style="background-color: #465464; padding:20px; height:2500px">
-    <div class="row" style="margin-top:20px;">
-        <div class="pull-left">
-            <input id="searchId" type="text" ng-model="scoreSearch" size="40" class="col-sm-3 form-control input-sm" placeholder="Search">
-        </div>
-
-    </div>
-
-    <div style="margin-top:20px;">
-      <div ng-repeat="score in scores" ng-include="'scorecard'"></div>
-    </div>
-
-</div>
-<div id="contentbody" class="contentbody">
-  <div id="wrapper">
-  <h1>Team Name here</h1>
-  
-  <table id="scoredetails" cellspacing="0" cellpadding="0">
+<script id="scorecard" type="text/ng-template">
+    <table id="scoredetails" cellspacing="0" cellpadding="0">
     <thead>
       <tr>
         <th><span>Batsman</span></th>
@@ -45,7 +24,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="batting in innings1Batting">
+      <tr ng-repeat="batting in type.batting">
         <td class="lalign">{{batting.key0}}</td>
         <td>{{batting.key1}}</td>
         <td>{{batting.key2}}</td>
@@ -55,6 +34,48 @@
         <td>{{batting.key6}}</td>
       </tr>
     </tbody>
+
+    <thead>
+      <tr>
+        <th><span>Bowling</span></th>
+        <th><span>Overs</span></th>
+        <th><span>Maidens</span></th>
+        <th><span>Runs</span></th>
+        <th><span>Wickets</span></th>
+        <th><span>Econ.Rate</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="bowling in type.bowling">
+        <td class="lalign">{{bowling.key0}}</td>
+        <td>{{bowling.key1}}</td>
+        <td>{{bowling.key2}}</td>
+        <td>{{bowling.key3}}</td>
+        <td>{{bowling.key4}}</td>
+        <td>{{bowling.key7}}</td>
+      </tr>
+    </tbody>
   </table>
+</script>
+
+<div>
+    <h1>Live cricket scores</h1>
+</div>
+
+<div id="sidebar" class="col-3 col-md-3" style="background-color: #465464; padding:20px; height:2500px">
+    <div class="row" style="margin-top:20px;">
+        <div class="pull-left">
+            <input id="searchId" type="text" ng-model="scoreSearch" size="40" class="col-sm-3 form-control input-sm" placeholder="Search">
+        </div>
+    </div>
+    <div style="margin-top:20px;">
+      <div ng-repeat="score in scores" ng-include="'summary'"></div>
+    </div>
+</div>
+
+<div id="contentbody" class="contentbody">
+  <div id="wrapper">
+    <score-card type="innings1"></score-card>
+    <score-card type="innings2"></score-card>
  </div> 
 </div>

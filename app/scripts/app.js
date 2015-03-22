@@ -23,4 +23,13 @@ angular.module( 'sillypointAngularNodeApp', [ 'ui.bootstrap'])
         });
 
         $locationProvider.html5Mode( true );
-    }]);
+    }])
+    .directive('scoreCard', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'scorecard',
+        scope: {
+            type: '='
+        }
+    };
+});
