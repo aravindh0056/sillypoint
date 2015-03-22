@@ -10,54 +10,6 @@
   </div>
 </script>
 
-<script id="scorecard" type="text/ng-template">
-    <table id="scoredetails" cellspacing="0" cellpadding="0">
-    <thead>
-      <tr>
-        <th><span>Batsman</span></th>
-        <th><span>Wicket Desc</span></th>
-        <th><span>Runs</span></th>
-        <th><span>Balls Faced</span></th>
-        <th><span>4s</span></th>
-        <th><span>6s</span></th>
-        <th><span>Strike rate</span></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="batting in type.batting">
-        <td class="lalign">{{batting.key0}}</td>
-        <td>{{batting.key1}}</td>
-        <td>{{batting.key2}}</td>
-        <td>{{batting.key3}}</td>
-        <td>{{batting.key4}}</td>
-        <td>{{batting.key5}}</td>
-        <td>{{batting.key6}}</td>
-      </tr>
-    </tbody>
-
-    <thead>
-      <tr>
-        <th><span>Bowling</span></th>
-        <th><span>Overs</span></th>
-        <th><span>Maidens</span></th>
-        <th><span>Runs</span></th>
-        <th><span>Wickets</span></th>
-        <th><span>Econ.Rate</span></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="bowling in type.bowling">
-        <td class="lalign">{{bowling.key0}}</td>
-        <td>{{bowling.key1}}</td>
-        <td>{{bowling.key2}}</td>
-        <td>{{bowling.key3}}</td>
-        <td>{{bowling.key4}}</td>
-        <td>{{bowling.key7}}</td>
-      </tr>
-    </tbody>
-  </table>
-</script>
-
 <div>
     <h1>Live cricket scores</h1>
 </div>

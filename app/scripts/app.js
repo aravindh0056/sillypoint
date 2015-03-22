@@ -27,7 +27,7 @@ angular.module( 'sillypointAngularNodeApp', [ 'ui.bootstrap'])
     .directive('scoreCard', function() {
     return {
         restrict: 'E',
-        templateUrl: 'scorecard',
+        templateUrl: 'views/templates/scorecard.html',
         scope: {
             type: '='
         }
