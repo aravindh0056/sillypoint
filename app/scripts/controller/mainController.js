@@ -7,6 +7,7 @@ angular.module( 'sillypointAngularNodeApp' )
         $http.get('http://localhost:3001/scrape').
         success(function(data) {
             $scope.scores = data;
+            $scope.innings1Batting = data[0].innings1Batting;
         });
 
         $scope.redirect = function( path ) {

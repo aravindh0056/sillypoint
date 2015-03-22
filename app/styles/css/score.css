@@ -6,20 +6,8 @@
 	float: left;
 	display: inline-block;
 }
-.main-sidebar {
-  background: #222d32;
-  position: absolute;
-  top: 0;
-  left: 0;
-  top:100px;
-  padding-top: 50px;
-  min-height: 100%;
-  width: 230px;
-  z-index: 810;
-  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -moz-transition: -moz-transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -o-transition: -o-transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  transition: transform 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+.contentbody {
+  margin-left:300px;
 }
 
 /* General Links */
@@ -32,4 +20,67 @@ a:focus {
   outline: none;
   text-decoration: none;
   color: #72afd2;
+}
+
+.scoreitem {
+  display: block;
+}
+
+body { 
+  background: #eee url('http://i.imgur.com/eeQeRmk.png'); /* http://subtlepatterns.com/weave/ */
+}
+
+/** page structure **/
+#wrapper {
+  display: block;
+  width: 1050px;
+  background: #fff;
+  margin: 0 auto;
+  padding: 10px 17px;
+  -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
+}
+
+#scoredetails {
+  margin: 0 auto;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+
+#scoredetails thead {
+  cursor: pointer;
+  background: #c9dff0;
+}
+#scoredetails thead tr th { 
+  font-weight: bold;
+  padding: 12px 30px;
+  padding-left: 42px;
+}
+#scoredetails thead tr th span { 
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+#scoredetails thead tr th.headerSortUp, #scoredetails thead tr th.headerSortDown {
+  background: #acc8dd;
+}
+
+#scoredetails thead tr th.headerSortUp span {
+  background-image: url('http://i.imgur.com/SP99ZPJ.png');
+}
+#scoredetails thead tr th.headerSortDown span {
+  background-image: url('http://i.imgur.com/RkA9MBo.png');
+}
+
+
+#scoredetails tbody tr { 
+  color: #555;
+}
+#scoredetails tbody tr td {
+  text-align: center;
+  padding: 15px 10px;
+}
+#scoredetails tbody tr td.lalign {
+  text-align: left;
 }

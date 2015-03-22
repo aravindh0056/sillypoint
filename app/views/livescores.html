@@ -1,7 +1,7 @@
 <script type="text/ng-template" id="scorecard">
 
 <div>
-<a href="#">
+<a ng-click="" class="scoreitem" href="#">
     <div style="width: 352px; height: 100px;" id="">
         {{score.title}} <br>
         {{score.innings1}} <br>
@@ -15,11 +15,10 @@
     <h1>Live cricket scores</h1>
 </div>
 
-
-<div id="demo1" class="col-3 col-md-3" style="background-color: #465464; padding:20px; height:2500px">
+<div id="sidebar" class="col-3 col-md-3" style="background-color: #465464; padding:20px; height:2500px">
     <div class="row" style="margin-top:20px;">
         <div class="pull-left">
-            <input id="my4" type="text" ng-model="folderSearch" size="40" class="col-sm-3 form-control input-sm" placeholder="Search">
+            <input id="searchId" type="text" ng-model="scoreSearch" size="40" class="col-sm-3 form-control input-sm" placeholder="Search">
         </div>
 
     </div>
@@ -28,4 +27,34 @@
       <div ng-repeat="score in scores" ng-include="'scorecard'"></div>
     </div>
 
+</div>
+<div id="contentbody" class="contentbody">
+  <div id="wrapper">
+  <h1>Team Name here</h1>
+  
+  <table id="scoredetails" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th><span>Batsman</span></th>
+        <th><span>Wicket Desc</span></th>
+        <th><span>Runs</span></th>
+        <th><span>Balls Faced</span></th>
+        <th><span>4s</span></th>
+        <th><span>6s</span></th>
+        <th><span>Strike rate</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="batting in innings1Batting">
+        <td class="lalign">{{batting.key0}}</td>
+        <td>{{batting.key1}}</td>
+        <td>{{batting.key2}}</td>
+        <td>{{batting.key3}}</td>
+        <td>{{batting.key4}}</td>
+        <td>{{batting.key5}}</td>
+        <td>{{batting.key6}}</td>
+      </tr>
+    </tbody>
+  </table>
+ </div> 
 </div>
