@@ -15,4 +15,8 @@ angular.module( 'sillypointAngularNodeApp' )
             $window.location.href = path;
         };
 
-    }]);
+    }])
+    .controller( 'AboutCtrl', [ '$scope', '$location', '$window', '$http', 
+                    function( $scope, $location, $window, $http ) {
+
+    }])

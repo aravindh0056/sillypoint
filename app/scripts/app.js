@@ -5,9 +5,15 @@ angular.module( 'sillypointAngularNodeApp', [ 'ui.bootstrap'])
         $routeProvider
         .when( '/', {
             // @todo fix this
-            templateUrl: 'views/mainView.html',
+            templateUrl: 'views/livescores.html',
             controller: 'MainCtrl'
         })
+        .when( '/about', {
+            // @todo fix this
+            templateUrl: 'views/about.html',
+            controller: 'AboutCtrl'
+        })
+        
         .otherwise({
             redirectTo: '/'
         });

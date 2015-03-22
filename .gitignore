@@ -6,4 +6,10 @@ app/components
 .idea
 /BUILDLOG.md
 /app/styles/css/main.css
+/app/bootstrap
+/app/font
+/app/font-awesome-more
+/app/fonts
+/app/img
+/app/less
 /.jshint

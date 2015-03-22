@@ -16,6 +16,8 @@
         <!-- build:css styles/css/main-min.css -->
         <link rel="stylesheet" href="styles/css/main.css">
         <link rel="stylesheet" href="styles/css/score.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
         <!-- endbuild -->
 
         <!-- build:js scripts/vendor/modernizr.js -->
@@ -33,7 +35,7 @@
         <script src="components/json3/lib/json3.min.js"></script>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
+        <div ng-include src="'header.html'"></div>
         <div class="container" ng-view></div>
 
         <!-- Scripts -->
@@ -53,9 +55,10 @@
         <script src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
         <script src="components/angular-bootstrap/ui-bootstrap.min.js"></script>
 
+
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controller/mainController.js"></script>
+        <script src="scripts/controller/maincontroller.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
