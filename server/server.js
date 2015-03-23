@@ -1,9 +1,3 @@
-require('nodetime').profile({
-    accountKey: '795cdf7e9883d5e691505bce95f25efaab4416b0', 
-    appName: 'Node.js Application',
-    debug:true
-  });
-
 'use strict';
 
 /**
