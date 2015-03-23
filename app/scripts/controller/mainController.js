@@ -4,9 +4,13 @@ angular.module( 'sillypointAngularNodeApp' )
     .controller( 'MainCtrl', [ '$scope', '$location', '$window', '$http', 
                     function( $scope, $location, $window, $http ) {
 
-        $http.get('http://localhost:3001/scrape').
+        $scope.key = false;
+
+        $http.get('http://localhost:3001/livescore').
         success(function(data) {
             $scope.scores = data;
+            $scope.refreshScorecard(data[0]);
+            $scope.key = true;
         });
 
         $scope.redirect = function( path ) {

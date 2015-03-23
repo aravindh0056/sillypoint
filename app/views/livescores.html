@@ -14,20 +14,22 @@
     <h1>Live cricket scores</h1>
 </div>
 
-<div id="sidebar" class="col-3 col-md-3" style="background-color: #465464; padding:20px; height:2500px">
-    <div class="row" style="margin-top:20px;">
-        <div class="pull-left">
-            <input id="searchId" type="text" ng-model="scoreSearch" size="40" class="col-sm-3 form-control input-sm" placeholder="Search">
-        </div>
-    </div>
-    <div style="margin-top:20px;">
-      <div ng-repeat="score in scores" ng-include="'summary'"></div>
-    </div>
-</div>
+<div ng-if="key">
+  <div id="sidebar" class="col-3 col-md-3" style="background-color: #465464; padding:20px; height:2500px">
+      <div class="row" style="margin-top:20px;">
+          <div class="pull-left">
+              <input id="searchId" type="text" ng-model="scoreSearch" size="40" class="col-sm-3 form-control input-sm" placeholder="Search">
+          </div>
+      </div>
+      <div style="margin-top:20px;">
+        <div ng-repeat="score in scores | filter:scoreSearch" ng-include="'summary'"></div>
+      </div>
+  </div>
 
-<div id="contentbody" class="contentbody">
-  <div id="wrapper">
-    <score-card type="innings1"></score-card>
-    <score-card type="innings2"></score-card>
- </div> 
+  <div id="contentbody" class="contentbody">
+    <div id="wrapper">
+      <score-card type="innings1"></score-card>
+      <score-card type="innings2"></score-card>
+   </div> 
+  </div>
 </div>
