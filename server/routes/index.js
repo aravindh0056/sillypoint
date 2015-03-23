@@ -11,7 +11,7 @@ server.get( '/', require( './main' ) );
 // Example route
 server.get( '/route/:route', require( './example' ) );
 
-server.get( '/scrape', score.getAllScores );
+server.get( '/livescore', score.getCachedScores );
 
 // Example database route
 //server.get( '/db', require( '../db/example' ) );

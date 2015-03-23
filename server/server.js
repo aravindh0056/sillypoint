@@ -37,3 +37,4 @@ http.createServer( server ).listen( server.get( 'port' ), function() {
 
 // Configure Routes
 require( './routes' );
+setInterval(require('./scores/index').getAllScores, 10000);

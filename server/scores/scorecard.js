@@ -31,8 +31,6 @@ function populateFullScoreCard(innings, index, $) {
 function LiveScore(url){
 	console.log(url);
 	var deferred = Q.defer();
-	//url = "http://www.cricbuzz.com/live-cricket-scorecard/13848/england-vs-india-3rd-match-india-and-england-in-australia-tri-series-2015";
-	//url = "http://www.cricbuzz.com/live-cricket-scores/13847/australia-vs-india-2nd-match-india-and-england-in-australia-tri-series-2015";
 	request.get(url, function(error, response, html){
 		if(!error) {
 			console.log("Getting live");
@@ -58,8 +56,6 @@ function LiveScore(url){
 				innings2Batting : innings2Batting,
 				innings2Bowling : innings2Bowling
 			});
-			//score1 = score1.replace(/\t/g,'');
-
 		}
 	});
 

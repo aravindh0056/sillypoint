@@ -8,6 +8,7 @@ var promiseWhile = require('./../util/promisewhile');
 var app     = express();
 var Q = require('q');
 var scores;
+var cache;
 
 function getTitle(){
 	var $ = cheerio.load(this);
@@ -97,6 +98,10 @@ function getMatches(cb) {
 	.done();
 }
 
+exports.getCachedScores = function(req, res) {
+	res.send(cache);
+}
+
 exports.getAllScores = function(req, res){
 
 	var url = 'http://www.cricbuzz.com/cricket-match/live-scores';
@@ -111,7 +116,7 @@ exports.getAllScores = function(req, res){
 			var index = 1;
 			var _ = require('underscore');
 			var cb = _.after(totalItems, function() {
-				res.send(scores)
+				cache = scores;
 			});
 			promiseWhile(function () { return index <= totalItems; }, function () {
 			    //Practicing promises and understanding event loops
