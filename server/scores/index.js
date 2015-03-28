@@ -81,8 +81,7 @@ function getMatches(cb) {
 		console.log("hyperlink:" + "  "+ hyperLinks[1]);
 		var promise = new LiveScore(hyperLinks[1]);
 		promise.then(function(status) {
-			scores.push(status);
-			console.log(status);
+			if(status.innings1.length != 0) scores.push(status);
 		}).
 		done(cb)
 	}
