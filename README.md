@@ -1,7 +1,7 @@
 # sillypoint
 
-Mobile web app that shows live cricket scores. 
+Single page web application that shows live cricket scores
 
-Developed using angular.js, node.js. 
+Developed mainly using Angular.js, Node.js
 
 Uses REST architecture
